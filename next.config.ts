@@ -1,7 +1,35 @@
-import type { NextConfig } from "next";
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: [
+      'images.unsplash.com',
+      'plus.unsplash.com',
+      'commondatastorage.googleapis.com',
+      'i.pravatar.cc',
+      'picsum.photos',
+      'via.placeholder.com',
+      'source.unsplash.com'
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'commondatastorage.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+    ],
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = nextConfig
