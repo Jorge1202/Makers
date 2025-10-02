@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, Home, MessageCircle, PlusSquare, Compass, Heart, Menu } from 'lucide-react';
-import { SearchInput } from '@/components/home/Search';
+import { SearchInput } from '@/features/home/components/Search';
 
 export function Header() {
   const [showNotifications, setShowNotifications] = useState(false);
