@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Project } from '@/features/projects/types/project';
 import { cn } from '@/features/projects/utils/utils';
+import { GitFork, Heart, Clock, Star } from 'lucide-react';
 
 interface StepNavigationProps {
     project: Project;
@@ -45,7 +46,7 @@ export default function StepNavigation({ project, currentView, currentStepId }: 
     };
 
     return (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sticky top-8">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sticky top-10">
             {/* Información del proyecto */}
             <div className="mb-6">
                 <h1 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
@@ -70,7 +71,7 @@ export default function StepNavigation({ project, currentView, currentStepId }: 
                     className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-4 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 group"
                 >
                     <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span className="text-lg">⚡</span>
+                        <GitFork size={16} color="#000000" strokeWidth={1.5} />
                     </div>
                     <div className="text-left">
                         <div className="text-sm">¡Hazlo tú mismo!</div>

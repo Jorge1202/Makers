@@ -1,5 +1,5 @@
 import { Project } from '@/features/projects/types/project';
-import { formatTime, formatDate } from '@/features/projects/utils/utils';
+import { formatTime } from '@/features/projects/utils/utils';
 
 interface ProjectOverviewProps {
     project: Project;

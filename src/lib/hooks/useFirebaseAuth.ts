@@ -14,7 +14,6 @@ import {
   AuthError as FirebaseAuthError
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase/client'; 
-import { AuthError, ApiError } from '@/lib/types/firebase'; 
 
 // Función type-safe para manejar errores de Firebase
 function getFirebaseErrorMessage(error: unknown): string {

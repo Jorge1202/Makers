@@ -103,6 +103,14 @@ export interface Step {
   };
 }
 
+export interface ProjectMedia {
+  type: 'image' | 'video';
+  url: string;
+  file?: File; // Para manejo temporal antes de subir
+  caption?: string;
+  isFeatured?: boolean;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -111,6 +119,7 @@ export interface Project {
   objectives: string[];
   expectedResult: string;
   inspiration: string[];
+  featuredMedia: ProjectMedia[];
   
   // METADATOS BÁSICOS
   status: 'planning' | 'in-progress' | 'completed' | 'paused';

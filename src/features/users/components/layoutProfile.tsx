@@ -1,6 +1,6 @@
 // src/app/[username]/layout.tsx
 import { UserProfile } from '@/features/users/types/types';
-import { Header } from '@/components/layout/Header';
+import { Layout } from '@/components/layout/layoutHeader';
 import { Project } from '@/features/users/types/types';
 import { ProfileHeader } from '@/features/users/components/ProfileHeader';
 import { ProfileTabs } from '@/features/users/components/ProfileTabs';
@@ -24,7 +24,7 @@ export const mockUser: UserProfile = {
   tools: ['sierra circular', 'router', 'lijadora orbital', 'formones', 'martillo', 'pistola de clavos'],
 
   stats: {
-    projectsCompleted: 47,
+    projectsCompleted: 2,
     projectsInProgress: 3,
     followers: 1247,
     following: 89,
@@ -159,22 +159,23 @@ interface ProfileLayoutProps {
 
 export function ProfileLayout({ children }: ProfileLayoutProps) {
   return <>
-    <Header />
-    <div className="min-h-screen bg-gray-50">
-      <ProfileHeader user={mockUser} />
-      <ProfileTabs />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-1">
-            <ProfileSidebar user={mockUser} />
-          </div>
-          <div className='lg:col-span-3 space-y-6'>
-              {children}
-            
+    <Layout>
+      <div className="min-h-screen bg-gray-50">
+        <ProfileHeader user={mockUser} />
+        <ProfileTabs />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="lg:col-span-1">
+              <ProfileSidebar user={mockUser} />
+            </div>
+            <div className='lg:col-span-3 space-y-6'>
+                {children}
+              
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
+      </div>
+    </Layout>
   </>;
 }

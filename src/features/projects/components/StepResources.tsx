@@ -1,5 +1,4 @@
 import { Step } from '@/features/projects/types/project';
-import { getSafetyLevelColor } from '@/features/projects/utils/utils';
 
 interface StepResourcesProps {
     step: Step;

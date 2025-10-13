@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Header } from '@/components/layout/Header';
+import { Layout } from '@/components/layout/layoutHeader';
 import { Stories } from '@/features/home/components/Stories';
 import { Post } from '@/features/home/components/post/Post';
 import { Home, Compass, PlusSquare, GitFork, Users, BookOpen, TrendingUp } from 'lucide-react';
@@ -607,9 +607,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-
-      <main className="min-h-screen pt-14">
+      <Layout>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row lg:space-x-8">
 
@@ -739,7 +737,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </main>
+      </Layout>
+
 
       {/* Navigation Mobile Footer */}
       <footer className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-300 backdrop-blur-sm bg-white/95 z-40">

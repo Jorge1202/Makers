@@ -27,7 +27,7 @@ export default function LoginPage() {
 
     try {
       await signInWithEmail(email, password);
-      router.push('/dashboard');
+      router.push('/');
     } catch (caughtError: unknown) {
       // El error ya viene como string desde el hook
       setFormError(caughtError instanceof Error ? caughtError.message : 'Error desconocido');

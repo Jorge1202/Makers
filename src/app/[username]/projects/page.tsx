@@ -1,9 +1,6 @@
 // src/app/[username]/projects/page.tsx
-import { ProfileHeader } from '@/features/users/components/ProfileHeader';
-import { ProfileTabs } from '@/features/users/components/ProfileTabs';
-import { ProfileSidebar } from '@/features/users/components/ProfileSidebar';
 import { ProjectCard } from '@/features/users/components/ProjectCard';
-import { mockUser, ProfileLayout, mockProjects } from '@/features/users/components/layoutProfile';
+import { ProfileLayout, mockProjects } from '@/features/users/components/layoutProfile';
 
 // Datos mock (en un archivo separado sería ideal)
 export default async function ProjectsPage() {

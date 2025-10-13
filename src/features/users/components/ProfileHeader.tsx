@@ -230,19 +230,21 @@ export function ProfileHeader({ user }: ProfileHeaderProps) {
 
             {/* Estadísticas */}
             <div className="flex items-center space-x-6 rounded-lg px-4 py-3">
-              <div className="text-center">
-                <div className="font-bold text-gray-900 text-lg">{user.stats.projectsCompleted}</div>
-                <div className="text-sm text-gray-600">Proyectos</div>
-              </div>
 
+              <div className="text-center">
+                <div className="font-bold text-gray-900 text-lg">{user.stats.following}</div>
+                <div className="text-sm text-gray-600">Siguiendo</div>
+              </div>
+              
               <div className="text-center">
                 <div className="font-bold text-gray-900 text-lg">{user.stats.followers}</div>
                 <div className="text-sm text-gray-600">Seguidores</div>
               </div>
 
+     
               <div className="text-center">
-                <div className="font-bold text-gray-900 text-lg">{user.stats.following}</div>
-                <div className="text-sm text-gray-600">Siguiendo</div>
+                <div className="font-bold text-gray-900 text-lg">{user.stats.projectsCompleted}</div>
+                <div className="text-sm text-gray-600">Proyectos</div>
               </div>
 
               <div className="text-center">

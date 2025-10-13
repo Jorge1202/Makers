@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { FirebaseGoogleSignInButton } from '@/components/auth/FirebaseGoogleSignInButton';
-import { Eye, EyeOff, Mail, Lock, User, Check } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
 import { useFirebaseAuth } from '@/lib/hooks/useFirebaseAuth';
 
 export default function RegisterPage() {
@@ -17,16 +17,13 @@ export default function RegisterPage() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: '',
     acceptTerms: false
   });
-
-  console.log(formData);
   
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -41,7 +38,7 @@ export default function RegisterPage() {
   };
 
   const validateForm = (): boolean => {
-    if (!formData.name.trim()) {
+    if (!formData.username.trim()) {
       setFormError('El nombre es requerido');
       return false;
     }
@@ -96,11 +93,11 @@ export default function RegisterPage() {
       await signUpWithEmail(
         formData.email.trim(), 
         formData.password, 
-        formData.name.trim()
+        formData.username.trim()
       );
       
       // Redirigir al dashboard después del registro exitoso
-      router.push('/dashboard');
+      router.push('/onboarding');
     } catch (caughtError: unknown) {
       const errorMessage = caughtError instanceof Error ? caughtError.message : 'Error en el registro';
       setFormError(errorMessage);
@@ -127,7 +124,7 @@ export default function RegisterPage() {
           {/* Google Sign In */}
           <FirebaseGoogleSignInButton 
             text="Regístrate con Google"
-            redirectTo="/dashboard"
+            redirectTo="/onboarding"
           />
 
           {/* Divider */}
@@ -144,13 +141,14 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Nombre */}
             <Input
-              label="Nombre completo"
-              name="name"
+              label="Username"
+              name="username"
               type="text"
-              value={formData.name}
+              maxLength={15}
+              value={formData.username}
               onChange={handleInputChange}
               leftIcon={<User size={18} />}
-              placeholder="Tu nombre completo"
+              placeholder="Tu username"
               disabled={loading || isLoading}
               required
             />

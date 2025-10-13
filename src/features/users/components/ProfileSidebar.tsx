@@ -21,22 +21,7 @@ export function ProfileSidebar({ user }: ProfileSidebarProps) {
       {/* Información básica */}
       <div className="bg-white rounded-lg shadow-sm p-6">
         <h3 className="font-semibold text-lg mb-4">Información</h3>
-        
-        
-
-
-        {/* Especialidades */}
-        <div className="mb-4">
-          <h4 className="font-medium text-gray-900 mb-2">Especialidades</h4>
-          <div className="flex flex-wrap gap-2">
-            {user.specialties.map(specialty => (
-              <span key={specialty} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
-                {specialty}
-              </span>
-            ))}
-          </div>
-        </div>
-        
+                      
         {/* Ubicación */}
         {user.location && (
           <div className="mb-4">
@@ -51,26 +36,24 @@ export function ProfileSidebar({ user }: ProfileSidebarProps) {
           <p className="text-gray-600 capitalize">{getExpertiseLevelText(user.expertiseLevel)}</p>
         </div>
         
+        {/* Especialidades */}
+        <div className="mb-4">
+          <h4 className="font-medium text-gray-900 mb-2">Especialidades</h4>
+          <div className="flex flex-wrap gap-2">
+            {user.specialties.map(specialty => (
+              <span key={specialty} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
+                {specialty}
+              </span>
+            ))}
+          </div>
+        </div>
+
         {/* Fecha de ingreso */}
         <div>
           <h4 className="font-medium text-gray-900 mb-1">Miembro desde</h4>
           <p className="text-gray-600">{new Date(user.joinedDate).toLocaleDateString('es-ES')}</p>
         </div>
       </div>
-
-      {/* Herramientas */}
-      {user.tools.length > 0 && (
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <h3 className="font-semibold text-lg mb-4">Herramientas principales</h3>
-          <div className="flex flex-wrap gap-2">
-            {user.tools.map(tool => (
-              <span key={tool} className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">
-                {tool}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Redes sociales */}
       {user.socialLinks && (

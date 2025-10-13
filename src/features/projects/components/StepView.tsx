@@ -5,10 +5,7 @@ import { Project } from '@/features/projects/types/project';
 import { formatTime } from '@/features/projects/utils/utils';
 import StepInstructions from './StepInstructions';
 import StepResources from './StepResources';
-import StepFinishes from './StepFinishes';
-import StepQuality from './StepQuality';
 import StepLessons from './StepLessons';
-import StepTechnical from './StepTechnical';
 
 interface StepViewProps {
   project: Project;
